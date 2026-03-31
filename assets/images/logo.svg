@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <!-- Single brush-style circle -->
+  <circle cx="110" cy="105" r="90" fill="none" stroke="#2d6a31" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- ctwp text -->
+  <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#2d6a31">ctwp</text>
+
+  <!-- educational empowerment text - positioned well inside the circle -->
+  <text x="110" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#e8561d">educational empowerment</text>
+</svg>

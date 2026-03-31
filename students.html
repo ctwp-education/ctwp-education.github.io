@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free educational resources for K-12 students — interactive courses, coding platforms, science simulations, language tools, and AI tutors.">
+  <meta name="keywords" content="free education, K-12 students, primary school, secondary school, online courses, coding, languages, AI tools, learning resources">
+  <meta name="author" content="CTWP Educational Empowerment">
+  <title>K–12 Student Resources - CTWP Educational Empowerment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/Logos/ctwp logo round.jpg.png">
+  <style>
+    /* Subpage Hero Banner */
+    .subpage-hero {
+      background: var(--green-900);
+      color: var(--white);
+      padding: 8rem 0 3rem;
+      text-align: center;
+    }
+    .subpage-hero .hero-badge {
+      display: inline-block;
+      background: rgba(76, 175, 80, 0.15);
+      color: var(--green-300);
+      padding: 0.4rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .subpage-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .subpage-hero p {
+      color: var(--gray-400);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .subpage-hero .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--orange-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color var(--transition);
+    }
+    .subpage-hero .back-link:hover {
+      color: var(--orange-400);
+    }
+
+    /* Category Header */
+    .category-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--green-50);
+      color: var(--green-600);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Resource Cards as Links */
+    a.resource-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .resource-card .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .resource-card .card-header i {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+    .resource-card .card-header h4 {
+      margin-bottom: 0;
+    }
+    .resource-card .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--orange-500);
+      font-weight: 500;
+      margin-top: 0.75rem;
+      transition: gap var(--transition);
+    }
+    a.resource-card:hover .card-link {
+      gap: 0.6rem;
+    }
+
+    /* Alternating section backgrounds */
+    .section-alt {
+      background: var(--gray-50);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/Logos/ctwp logo round.jpg.png" alt="CTWP Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">CTWP</span>
+          <span class="logo-tagline">EDUCATIONAL EMPOWERMENT</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+        <li><a href="index.html#support" class="nav-link">Support Us</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#resources" class="mobile-link">Resources</a></li>
+      <li><a href="index.html#support" class="mobile-link">Support Us</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <a href="index.html#resources" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Resources
+      </a>
+      <div class="hero-badge">
+        <span>K–12 Learning Tools</span>
+      </div>
+      <h1>Resources for School Students (K-12)</h1>
+      <p>Curated free platforms to help you learn anything — from coding and languages to science, math, and AI. Perfect for ages 6–18.</p>
+    </div>
+  </section>
+
+  <!-- Free Online Courses -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="section-label section-label-orange">Learn Anything</span>
+        <h2 class="section-title">Free Online Courses</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://www.khanacademy.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-play-circle"></i>
+            <h4>Khan Academy</h4>
+          </div>
+          <p>Free courses in math, science, computing, economics, and more with practice exercises.</p>
+          <span class="card-link">Visit khanacademy.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.coursera.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-university"></i>
+            <h4>Coursera</h4>
+          </div>
+          <p>Audit university-level courses for free from top institutions worldwide.</p>
+          <span class="card-link">Visit coursera.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.edx.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-chalkboard"></i>
+            <h4>edX</h4>
+          </div>
+          <p>Free courses from Harvard, MIT, and other leading universities.</p>
+          <span class="card-link">Visit edx.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://ocw.mit.edu" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-book-open"></i>
+            <h4>MIT OpenCourseWare</h4>
+          </div>
+          <p>Free lecture notes, exams, and videos from MIT — no registration required.</p>
+          <span class="card-link">Visit ocw.mit.edu <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.freecodecamp.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-laptop-code"></i>
+            <h4>freeCodeCamp</h4>
+          </div>
+          <p>Learn to code for free with interactive lessons and earn certifications.</p>
+          <span class="card-link">Visit freecodecamp.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coding & Programming -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-code"></i></div>
+        <span class="section-label section-label-orange">Build & Create</span>
+        <h2 class="section-title">Coding & Programming</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://www.codecademy.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-terminal"></i>
+            <h4>Codecademy</h4>
+          </div>
+          <p>Interactive coding lessons in Python, JavaScript, HTML/CSS, and more.</p>
+          <span class="card-link">Visit codecademy.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://scratch.mit.edu" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-puzzle-piece"></i>
+            <h4>Scratch</h4>
+          </div>
+          <p>Visual programming for beginners — create stories, games, and animations.</p>
+          <span class="card-link">Visit scratch.mit.edu <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://cs50.harvard.edu" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-microchip"></i>
+            <h4>CS50 by Harvard</h4>
+          </div>
+          <p>Harvard's renowned introduction to computer science, free and online.</p>
+          <span class="card-link">Visit cs50.harvard.edu <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.theodinproject.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-route"></i>
+            <h4>The Odin Project</h4>
+          </div>
+          <p>Full-stack web development curriculum — completely free and open source.</p>
+          <span class="card-link">Visit theodinproject.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.w3schools.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-globe"></i>
+            <h4>W3Schools</h4>
+          </div>
+          <p>Beginner-friendly tutorials and references for web technologies.</p>
+          <span class="card-link">Visit w3schools.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-language"></i></div>
+        <span class="section-label section-label-orange">Speak the World</span>
+        <h2 class="section-title">Languages</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-comments"></i>
+            <h4>Duolingo</h4>
+          </div>
+          <p>Gamified language learning with bite-sized lessons in 40+ languages.</p>
+          <span class="card-link">Visit duolingo.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.bbc.co.uk/learningenglish" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-headphones"></i>
+            <h4>BBC Learning English</h4>
+          </div>
+          <p>Free English lessons, videos, and quizzes from the BBC.</p>
+          <span class="card-link">Visit bbc.co.uk/learningenglish <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.openculture.com/freelanguagelessons" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-book"></i>
+            <h4>Open Culture Languages</h4>
+          </div>
+          <p>Curated collection of free language lessons in 48+ languages.</p>
+          <span class="card-link">Visit openculture.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Tools for Learning -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-robot"></i></div>
+        <span class="section-label section-label-orange">Learn Smarter</span>
+        <h2 class="section-title">AI Tools for Learning</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-message"></i>
+            <h4>ChatGPT</h4>
+          </div>
+          <p>AI assistant for explanations, writing help, brainstorming, and tutoring.</p>
+          <span class="card-link">Visit chat.openai.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://claude.ai" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-brain"></i>
+            <h4>Claude AI</h4>
+          </div>
+          <p>Helpful AI for research, analysis, coding help, and thoughtful explanations.</p>
+          <span class="card-link">Visit claude.ai <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-sparkles"></i>
+            <h4>Google Gemini</h4>
+          </div>
+          <p>Google's AI for creative tasks, learning, and multimodal exploration.</p>
+          <span class="card-link">Visit gemini.google.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.perplexity.ai" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-search"></i>
+            <h4>Perplexity</h4>
+          </div>
+          <p>AI-powered search engine that provides sourced answers to your questions.</p>
+          <span class="card-link">Visit perplexity.ai <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-note-sticky"></i>
+            <h4>NotebookLM</h4>
+          </div>
+          <p>Google's AI notebook that helps you understand and organize your study materials.</p>
+          <span class="card-link">Visit notebooklm.google.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science & Math -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-flask"></i></div>
+        <span class="section-label section-label-orange">Explore & Calculate</span>
+        <h2 class="section-title">Science & Math</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://phet.colorado.edu" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-atom"></i>
+            <h4>PhET Simulations</h4>
+          </div>
+          <p>Interactive science and math simulations from the University of Colorado.</p>
+          <span class="card-link">Visit phet.colorado.edu <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.desmos.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-chart-line"></i>
+            <h4>Desmos</h4>
+          </div>
+          <p>Beautiful, free graphing calculator and interactive math activities.</p>
+          <span class="card-link">Visit desmos.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.wolframalpha.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-calculator"></i>
+            <h4>Wolfram Alpha</h4>
+          </div>
+          <p>Computational knowledge engine for math, science, and data questions.</p>
+          <span class="card-link">Visit wolframalpha.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.geogebra.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-shapes"></i>
+            <h4>GeoGebra</h4>
+          </div>
+          <p>Free tools for geometry, algebra, calculus, and 3D graphing.</p>
+          <span class="card-link">Visit geogebra.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading & Research -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="category-icon"><i class="fas fa-book-reader"></i></div>
+        <span class="section-label section-label-orange">Read & Discover</span>
+        <h2 class="section-title">Reading & Research</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://www.gutenberg.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-book-open"></i>
+            <h4>Project Gutenberg</h4>
+          </div>
+          <p>Over 70,000 free eBooks — classic literature and historical texts.</p>
+          <span class="card-link">Visit gutenberg.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-microscope"></i>
+            <h4>Google Scholar</h4>
+          </div>
+          <p>Search engine for scholarly articles, theses, and academic papers.</p>
+          <span class="card-link">Visit scholar.google.com <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://www.wikipedia.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fab fa-wikipedia-w"></i>
+            <h4>Wikipedia</h4>
+          </div>
+          <p>The free encyclopedia — millions of articles on every topic imaginable.</p>
+          <span class="card-link">Visit wikipedia.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="https://openstax.org" target="_blank" rel="noopener" class="resource-card">
+          <div class="card-header">
+            <i class="fas fa-atlas"></i>
+            <h4>OpenStax</h4>
+          </div>
+          <p>Free, peer-reviewed textbooks for college and high school courses.</p>
+          <span class="card-link">Visit openstax.org <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/images/Logos/ctwp logo round.jpg.png" alt="CTWP Logo" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">CTWP</span>
+              <span class="logo-tagline">EDUCATIONAL EMPOWERMENT</span>
+            </div>
+          </a>
+          <p class="footer-description">Empowering every child through access to free education using technology.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#gallery">Our Work</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+            <li><a href="index.html#support">Support Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="https://ch.linkedin.com/company/ctwp-educationlempowerment" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100091277141645" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/ctwp_educationalempowerment/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://bongai-shamwari.org/en/" target="_blank" rel="noopener">Bongai Shamwari</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CTWP Educational Empowerment. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
