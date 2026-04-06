@@ -264,8 +264,14 @@ function toggleLanguage() {
   applyTranslations();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function i18nInit() {
   applyTranslations();
   const btn = document.getElementById('langToggle');
   if (btn) btn.addEventListener('click', toggleLanguage);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', i18nInit);
+} else {
+  i18nInit();
+}
