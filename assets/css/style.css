@@ -1041,13 +1041,6 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .support-tabs .tab-buttons {
   margin-bottom: 2rem;
 }
-.tab-hint {
-  text-align: center;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 1rem;
-  letter-spacing: 0.03em;
-}
 .section-dark .tab-btn {
   color: rgba(255,255,255,0.75);
   border-color: rgba(255,255,255,0.35);
