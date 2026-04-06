@@ -84,7 +84,9 @@ const translations = {
     'cta.title': 'Every Contribution Counts',
     'cta.desc': '100% of donations go directly to education programs. Bank transfers have zero transaction fees.',
     'cta.donate': 'Donate Now', 'cta.sponsor': 'Become a Sponsor',
-    'sponsors.label': 'Our Partners & Sponsors', 'sponsor.placeholder': 'Here could be your logo',
+    'sponsors.label': 'Our Partners & Sponsors',
+    'sponsor.main_sponsor': 'Main Sponsor', 'sponsor.main_partner': 'Main Partner', 'sponsor.partner': 'Partner',
+    'sponsor.placeholder': 'Here could be your logo',
     /* Contact */
     'contact.label': 'Get Involved', 'contact.title': "Let's Build the Future of Education",
     'contact.desc': "Whether you're an investor, educator, potential partner, or simply curious about our work — we'd love to hear from you.",
@@ -199,7 +201,9 @@ const translations = {
     'cta.title': 'Jeder Beitrag zählt',
     'cta.desc': '100 % der Spenden fliessen direkt in Bildungsprogramme. Banküberweisungen haben keine Transaktionsgebühren.',
     'cta.donate': 'Jetzt spenden', 'cta.sponsor': 'Sponsor werden',
-    'sponsors.label': 'Unsere Partner & Sponsoren', 'sponsor.placeholder': 'Hier könnte Ihr Logo stehen',
+    'sponsors.label': 'Unsere Partner & Sponsoren',
+    'sponsor.main_sponsor': 'Hauptsponsor', 'sponsor.main_partner': 'Hauptpartner', 'sponsor.partner': 'Partner',
+    'sponsor.placeholder': 'Hier könnte Ihr Logo stehen',
     /* Contact */
     'contact.label': 'Mitmachen', 'contact.title': 'Gestalten wir gemeinsam die Zukunft der Bildung',
     'contact.desc': 'Ob Investor, Lehrperson, potenzielle Partnerorganisation oder einfach neugierig auf unsere Arbeit — wir freuen uns von dir zu hören.',
