@@ -34,12 +34,13 @@
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#gallery" class="nav-link">Our Work</a></li>
-        <li><a href="#resources" class="nav-link">Resources</a></li>
-        <li><a href="#support" class="nav-link">Support Us</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#gallery" class="nav-link" data-i18n="nav.work">Our Work</a></li>
+        <li><a href="#resources" class="nav-link" data-i18n="nav.resources">Resources</a></li>
+        <li><a href="#support" class="nav-link" data-i18n="nav.support">Support Us</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
+      <button id="langToggle" class="lang-toggle">🇩🇪 DE</button>
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -49,11 +50,11 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav-links">
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#gallery" class="mobile-link">Our Work</a></li>
-      <li><a href="#resources" class="mobile-link">Resources</a></li>
-      <li><a href="#support" class="mobile-link">Support Us</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="#about" class="mobile-link" data-i18n="nav.about">About</a></li>
+      <li><a href="#gallery" class="mobile-link" data-i18n="nav.work">Our Work</a></li>
+      <li><a href="#resources" class="mobile-link" data-i18n="nav.resources">Resources</a></li>
+      <li><a href="#support" class="mobile-link" data-i18n="nav.support">Support Us</a></li>
+      <li><a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a></li>
     </ul>
   </div>
 
@@ -62,26 +63,26 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-badge" data-animate="fade-up">
-          <span>Free Education for Every Learner</span>
+          <span data-i18n="hero.badge">Free Education for Every Learner</span>
         </div>
-        <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+        <h1 class="hero-title" data-animate="fade-up" data-delay="100" data-i18n-html="hero.title">
           Empowering the world through <em>Education</em>
         </h1>
-        <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+        <p class="hero-subtitle" data-animate="fade-up" data-delay="200" data-i18n="hero.subtitle">
           CTWP Educational Empowerment bridges the gap between learners and free,
           open-source knowledge — testing technology in real classrooms, for real impact.
         </p>
         <div class="hero-cta" data-animate="fade-up" data-delay="300">
           <a href="#resources" class="btn btn-primary btn-lg">
-            <span>Explore Resources</span>
+            <span data-i18n="hero.cta.resources">Explore Resources</span>
             <i class="fas fa-arrow-right"></i>
           </a>
           <a href="#support" class="btn btn-accent btn-lg">
-            <span>Support Us</span>
+            <span data-i18n="hero.cta.support">Support Us</span>
             <i class="fas fa-heart"></i>
           </a>
           <a href="#about" class="btn btn-ghost btn-lg">
-            <span>About the Project</span>
+            <span data-i18n="hero.cta.about">About the Project</span>
           </a>
         </div>
       </div>
@@ -95,19 +96,19 @@
       <div class="hero-stats-inner">
         <div class="stat-item">
           <span class="stat-number" data-count="60">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Countries Visited</span>
+          <span class="stat-label" data-i18n="stat.countries">Countries Visited</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Schools Visited</span>
+          <span class="stat-label" data-i18n="stat.schools">Schools Visited</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" data-count="1000">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Students Reached</span>
+          <span class="stat-label" data-i18n="stat.students">Students Reached</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" data-count="1">0</span>
-          <span class="stat-label">Computer Lab Built</span>
+          <span class="stat-label" data-i18n="stat.labs">Computer Lab Built</span>
         </div>
       </div>
     </div>
@@ -117,8 +118,8 @@
   <section id="about" class="section">
     <div class="container">
       <div class="section-header" data-animate="fade-up">
-        <span class="section-label section-label-orange">About the Project</span>
-        <h2 class="section-title">What We Do</h2>
+        <span class="section-label section-label-orange" data-i18n="about.label">About the Project</span>
+        <h2 class="section-title" data-i18n="about.title">What We Do</h2>
       </div>
 
       <!-- Compact Vision & Mission -->
@@ -126,24 +127,24 @@
         <div class="vm-compact">
           <div class="vm-accent">
             <i class="fas fa-eye"></i>
-            <h3>Our Vision</h3>
+            <h3 data-i18n="vision.title">Our Vision</h3>
           </div>
-          <p>Empower every child / individual on this planet through access to (free) education by using technology and thereby positively impact the world of us all.</p>
+          <p data-i18n="vision.text">Empower every child / individual on this planet through access to (free) education by using technology and thereby positively impact the world of us all.</p>
         </div>
         <div class="vm-compact">
           <div class="vm-accent">
             <i class="fas fa-rocket"></i>
-            <h3>Our Mission</h3>
+            <h3 data-i18n="mission.title">Our Mission</h3>
           </div>
-          <p>Create an innovative school concept for underprivileged children that combines online and offline learning and integrates personalized education and real-life experiences.</p>
+          <p data-i18n="mission.text">Create an innovative school concept for underprivileged children that combines online and offline learning and integrates personalized education and real-life experiences.</p>
         </div>
       </div>
 
       <!-- Our Journey — Video + Phase Timeline -->
       <div class="journey" data-animate="fade-up">
         <div class="journey-header">
-          <h3 class="subsection-title">Our Journey to Impact</h3>
-          <p class="subsection-desc">Currently at Phase 4 out of 5</p>
+          <h3 class="subsection-title" data-i18n="journey.title">Our Journey to Impact</h3>
+          <p class="subsection-desc" data-i18n="journey.subtitle">Currently at Phase 4 out of 5</p>
         </div>
 
         <div class="journey-layout">
@@ -151,7 +152,7 @@
             <iframe src="https://www.youtube.com/embed/zky_9Jy7_Uo" title="CTWP Project Phases" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="journey-intro">
-            <p>From discovering real needs across 60+ countries to building and improving a pilot school — watch our journey unfold or explore each phase below.</p>
+            <p data-i18n="journey.desc">From discovering real needs across 60+ countries to building and improving a pilot school — watch our journey unfold or explore each phase below.</p>
           </div>
         </div>
 
@@ -160,11 +161,11 @@
           <div class="timeline-track">
             <div class="timeline-progress"></div>
           </div>
-          <button class="timeline-step completed" data-slide="0"><span class="step-num">1</span><span class="step-label">Discover</span></button>
-          <button class="timeline-step completed" data-slide="1"><span class="step-num">2</span><span class="step-label">Design</span></button>
-          <button class="timeline-step completed" data-slide="2"><span class="step-num">3</span><span class="step-label">Build</span></button>
-          <button class="timeline-step current" data-slide="3"><span class="step-num">4</span><span class="step-label">Improve</span></button>
-          <button class="timeline-step future" data-slide="4"><span class="step-num">5</span><span class="step-label">Scale</span></button>
+          <button class="timeline-step completed" data-slide="0"><span class="step-num">1</span><span class="step-label" data-i18n="phase.label.1">Discover</span></button>
+          <button class="timeline-step completed" data-slide="1"><span class="step-num">2</span><span class="step-label" data-i18n="phase.label.2">Design</span></button>
+          <button class="timeline-step completed" data-slide="2"><span class="step-num">3</span><span class="step-label" data-i18n="phase.label.3">Build</span></button>
+          <button class="timeline-step current" data-slide="3"><span class="step-num">4</span><span class="step-label" data-i18n="phase.label.4">Improve</span></button>
+          <button class="timeline-step future" data-slide="4"><span class="step-num">5</span><span class="step-label" data-i18n="phase.label.5">Scale</span></button>
         </div>
 
         <!-- Phase Slider -->
@@ -177,32 +178,32 @@
               <div class="phase-slide phase-completed" data-phase="1">
                 <div class="phase-slide-img">
                   <img src="assets/images/Malawi_Salima_Classroom.png" alt="School visits around the world">
-                  <div class="phase-badge">Completed</div>
+                  <div class="phase-badge" data-i18n="badge.completed">Completed</div>
                 </div>
                 <div class="phase-slide-content">
                   <div class="phase-num">Phase 1</div>
-                  <h4>Discover</h4>
-                  <p class="phase-tagline">Understanding real needs before creating solutions</p>
+                  <h4 data-i18n="phase1.title">Discover</h4>
+                  <p class="phase-tagline" data-i18n="phase1.tagline">Understanding real needs before creating solutions</p>
                   <ul>
-                    <li>150+ schools and universities visited across 60+ countries</li>
-                    <li>Teachers and students trained in digital learning and AI tools</li>
-                    <li>Global courses completed on pedagogy, learning science, and edtech</li>
+                    <li data-i18n="phase1.li1">150+ schools and universities visited across 60+ countries</li>
+                    <li data-i18n="phase1.li2">Teachers and students trained in digital learning and AI tools</li>
+                    <li data-i18n="phase1.li3">Global courses completed on pedagogy, learning science, and edtech</li>
                   </ul>
                 </div>
               </div>
               <div class="phase-slide phase-completed" data-phase="2">
                 <div class="phase-slide-media">
                   <iframe src="https://www.youtube.com/embed/BunAyvuqOao" title="CTWP Design Phase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                  <div class="phase-badge">Completed</div>
+                  <div class="phase-badge" data-i18n="badge.completed">Completed</div>
                 </div>
                 <div class="phase-slide-content">
                   <div class="phase-num">Phase 2</div>
-                  <h4>Design</h4>
-                  <p class="phase-tagline">Turning insights into a powerful learning model</p>
+                  <h4 data-i18n="phase2.title">Design</h4>
+                  <p class="phase-tagline" data-i18n="phase2.tagline">Turning insights into a powerful learning model</p>
                   <ul>
-                    <li>Built a future-ready school concept (Prototype / MVP)</li>
-                    <li>Combined online + offline learning experiences</li>
-                    <li>Focused on personalized learning and real-life skills</li>
+                    <li data-i18n="phase2.li1">Built a future-ready school concept (Prototype / MVP)</li>
+                    <li data-i18n="phase2.li2">Combined online + offline learning experiences</li>
+                    <li data-i18n="phase2.li3">Focused on personalized learning and real-life skills</li>
                   </ul>
                 </div>
               </div>
@@ -211,48 +212,48 @@
                   <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
                     <source src="assets/images/VID-20260209-WA0001.mp4" type="video/mp4">
                   </video>
-                  <div class="phase-badge">Completed</div>
+                  <div class="phase-badge" data-i18n="badge.completed">Completed</div>
                 </div>
                 <div class="phase-slide-content">
                   <div class="phase-num">Phase 3</div>
-                  <h4>Build</h4>
-                  <p class="phase-tagline">From vision to real-world impact</p>
+                  <h4 data-i18n="phase3.title">Build</h4>
+                  <p class="phase-tagline" data-i18n="phase3.tagline">From vision to real-world impact</p>
                   <ul>
-                    <li>Pilot school launched</li>
-                    <li>Safe and inspiring learning environment created</li>
-                    <li>Model tested in everyday school life</li>
+                    <li data-i18n="phase3.li1">Pilot school launched</li>
+                    <li data-i18n="phase3.li2">Safe and inspiring learning environment created</li>
+                    <li data-i18n="phase3.li3">Model tested in everyday school life</li>
                   </ul>
                 </div>
               </div>
               <div class="phase-slide phase-active" data-phase="4">
                 <div class="phase-slide-img">
                   <img src="assets/images/Computer Lab/mission.jpg.jpg" alt="Improving through experience">
-                  <div class="phase-badge">Current Phase</div>
+                  <div class="phase-badge" data-i18n="badge.current">Current Phase</div>
                 </div>
                 <div class="phase-slide-content">
                   <div class="phase-num">Phase 4</div>
-                  <h4>Improve</h4>
-                  <p class="phase-tagline">Improving through real experiences</p>
+                  <h4 data-i18n="phase4.title">Improve</h4>
+                  <p class="phase-tagline" data-i18n="phase4.tagline">Improving through real experiences</p>
                   <ul>
-                    <li>Continuous testing and refinement</li>
-                    <li>Feedback from students, teachers, and communities</li>
-                    <li>Ongoing adaptation to increase impact</li>
+                    <li data-i18n="phase4.li1">Continuous testing and refinement</li>
+                    <li data-i18n="phase4.li2">Feedback from students, teachers, and communities</li>
+                    <li data-i18n="phase4.li3">Ongoing adaptation to increase impact</li>
                   </ul>
                 </div>
               </div>
               <div class="phase-slide phase-future" data-phase="5">
                 <div class="phase-slide-img">
                   <img src="assets/images/IMG-20251204-WA0085.jpg" alt="Scaling education globally">
-                  <div class="phase-badge">Upcoming</div>
+                  <div class="phase-badge" data-i18n="badge.upcoming">Upcoming</div>
                 </div>
                 <div class="phase-slide-content">
                   <div class="phase-num">Phase 5</div>
-                  <h4>Scale</h4>
-                  <p class="phase-tagline">Scaling what works to reach more children</p>
+                  <h4 data-i18n="phase5.title">Scale</h4>
+                  <p class="phase-tagline" data-i18n="phase5.tagline">Scaling what works to reach more children</p>
                   <ul>
-                    <li>Strategic partnerships with schools and organizations</li>
-                    <li>Model prepared for replication globally</li>
-                    <li>Expanding access to meaningful education</li>
+                    <li data-i18n="phase5.li1">Strategic partnerships with schools and organizations</li>
+                    <li data-i18n="phase5.li2">Model prepared for replication globally</li>
+                    <li data-i18n="phase5.li3">Expanding access to meaningful education</li>
                   </ul>
                 </div>
               </div>
@@ -270,9 +271,9 @@
   <section id="gallery" class="section section-dark">
     <div class="container">
       <div class="section-header" data-animate="fade-up">
-        <span class="section-label">See the Impact</span>
-        <h2 class="section-title">Our Work in Action</h2>
-        <p class="section-subtitle">Photos and videos from our schools, training sessions, and community work.</p>
+        <span class="section-label" data-i18n="gallery.label">See the Impact</span>
+        <h2 class="section-title" data-i18n="gallery.title">Our Work in Action</h2>
+        <p class="section-subtitle" data-i18n="gallery.subtitle">Photos and videos from our schools, training sessions, and community work.</p>
       </div>
 
       <!-- Gallery Slider -->
@@ -309,7 +310,7 @@
 
       <!-- Social & Partner Links -->
       <div class="social-bar" data-animate="fade-up">
-        <h4>Follow Our Journey</h4>
+        <h4 data-i18n="gallery.follow">Follow Our Journey</h4>
         <div class="social-bar-links">
           <a href="https://ch.linkedin.com/company/ctwp-educationlempowerment" target="_blank" rel="noopener" class="social-bar-link">
             <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
@@ -332,9 +333,9 @@
   <section id="resources" class="section">
     <div class="container">
       <div class="section-header" data-animate="fade-up">
-        <span class="section-label section-label-orange">Free Learning Tools</span>
-        <h2 class="section-title">Educational Resources</h2>
-        <p class="section-subtitle">Curated free resources to enhance learning and teaching with technology.</p>
+        <span class="section-label section-label-orange" data-i18n="resources.label">Free Learning Tools</span>
+        <h2 class="section-title" data-i18n="resources.title">Educational Resources</h2>
+        <p class="section-subtitle" data-i18n="resources.subtitle">Curated free resources to enhance learning and teaching with technology.</p>
       </div>
 
       <div class="resource-cards" data-animate="fade-up">
@@ -344,9 +345,9 @@
           </div>
           <div class="role-card-body">
             <div class="role-card-icon"><i class="fas fa-school"></i></div>
-            <h3>School Students (K-12)</h3>
-            <p>Free courses, interactive coding tools, science simulations, AI tutors, and language platforms for K–12 learners.</p>
-            <span class="role-card-link">Explore School Resources <i class="fas fa-arrow-right"></i></span>
+            <h3 data-i18n="resources.k12.title">School Students (K-12)</h3>
+            <p data-i18n="resources.k12.desc">Free courses, interactive coding tools, science simulations, AI tutors, and language platforms for K–12 learners.</p>
+            <span class="role-card-link"><span data-i18n="resources.k12.link">Explore School Resources</span> <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
         <a href="university.html" class="resource-role-card">
@@ -355,9 +356,9 @@
           </div>
           <div class="role-card-body">
             <div class="role-card-icon"><i class="fas fa-user-graduate"></i></div>
-            <h3>University Students</h3>
-            <p>Academic research tools, free textbooks, productivity apps, AI assistants, and open courseware for higher education.</p>
-            <span class="role-card-link">Explore University Resources <i class="fas fa-arrow-right"></i></span>
+            <h3 data-i18n="resources.uni.title">University Students</h3>
+            <p data-i18n="resources.uni.desc">Academic research tools, free textbooks, productivity apps, AI assistants, and open courseware for higher education.</p>
+            <span class="role-card-link"><span data-i18n="resources.uni.link">Explore University Resources</span> <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
         <a href="teachers.html" class="resource-role-card">
@@ -366,9 +367,9 @@
           </div>
           <div class="role-card-body">
             <div class="role-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h3>Educators &amp; Teachers</h3>
-            <p>Lesson plans, AI teaching tools, classroom management, assessment resources, and professional development.</p>
-            <span class="role-card-link">Explore Educator Resources <i class="fas fa-arrow-right"></i></span>
+            <h3 data-i18n="resources.teacher.title">Educators &amp; Teachers</h3>
+            <p data-i18n="resources.teacher.desc">Lesson plans, AI teaching tools, classroom management, assessment resources, and professional development.</p>
+            <span class="role-card-link"><span data-i18n="resources.teacher.link">Explore Educator Resources</span> <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
       </div>
@@ -379,38 +380,38 @@
   <section id="support" class="section section-dark">
     <div class="container">
       <div class="section-header" data-animate="fade-up">
-        <span class="section-label">Make an Impact</span>
-        <h2 class="section-title">Support Us</h2>
-        <p class="section-subtitle">Whether you're an individual or a company — there are many ways to contribute to our mission.</p>
+        <span class="section-label" data-i18n="support.label">Make an Impact</span>
+        <h2 class="section-title" data-i18n="support.title">Support Us</h2>
+        <p class="section-subtitle" data-i18n="support.subtitle">Whether you're an individual or a company — there are many ways to contribute to our mission.</p>
       </div>
 
       <div class="support-tabs" data-animate="fade-up">
         <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="individuals">For Individuals</button>
-          <button class="tab-btn" data-tab="companies">For Companies</button>
+          <button class="tab-btn active" data-tab="individuals" data-i18n="tab.individuals">For Individuals</button>
+          <button class="tab-btn" data-tab="companies" data-i18n="tab.companies">For Companies</button>
         </div>
 
         <div class="tab-content active" id="tab-individuals">
           <div class="support-grid">
             <div class="support-card">
               <i class="fas fa-hand-holding-heart"></i>
-              <h4>Donate</h4>
-              <p>Every contribution directly funds technology access, teacher training, and learning materials for children in need.</p>
+              <h4 data-i18n="support.donate.title">Donate</h4>
+              <p data-i18n="support.donate.desc">Every contribution directly funds technology access, teacher training, and learning materials for children in need.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-hands-helping"></i>
-              <h4>Volunteer</h4>
-              <p>Share your skills in tech, education, content creation, or marketing — remotely or on-site in Zimbabwe.</p>
+              <h4 data-i18n="support.volunteer.title">Volunteer</h4>
+              <p data-i18n="support.volunteer.desc">Share your skills in tech, education, content creation, or marketing — remotely or on-site in Zimbabwe.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-users"></i>
-              <h4>Become a Member</h4>
-              <p>Join the Bongai Shamwari community. Your yearly membership forms the financial foundation we build on.</p>
+              <h4 data-i18n="support.member.title">Become a Member</h4>
+              <p data-i18n="support.member.desc">Join the Bongai Shamwari community. Your yearly membership forms the financial foundation we build on.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-share-alt"></i>
-              <h4>Spread the Word</h4>
-              <p>Share our mission on social media and in your network. Awareness is the first step to meaningful change.</p>
+              <h4 data-i18n="support.spread.title">Spread the Word</h4>
+              <p data-i18n="support.spread.desc">Share our mission on social media and in your network. Awareness is the first step to meaningful change.</p>
             </div>
           </div>
         </div>
@@ -419,23 +420,23 @@
           <div class="support-grid">
             <div class="support-card support-card-featured">
               <i class="fas fa-building"></i>
-              <h4>Corporate Sponsorship</h4>
-              <p>Partner as a main sponsor like Trelleborg. Fund digital infrastructure, computer labs, and educational programs. Get visibility and impact reports.</p>
+              <h4 data-i18n="support.corp.title">Corporate Sponsorship</h4>
+              <p data-i18n="support.corp.desc">Partner as a main sponsor like Trelleborg. Fund digital infrastructure, computer labs, and educational programs. Get visibility and impact reports.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-laptop"></i>
-              <h4>Technology Donations</h4>
-              <p>Donate laptops, tablets, or other devices to equip our computer labs and classrooms with the tools students need.</p>
+              <h4 data-i18n="support.tech.title">Technology Donations</h4>
+              <p data-i18n="support.tech.desc">Donate laptops, tablets, or other devices to equip our computer labs and classrooms with the tools students need.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-graduation-cap"></i>
-              <h4>Employee Volunteering</h4>
-              <p>Send skilled employees to train teachers and students in digital literacy, coding, and AI tools as part of your CSR program.</p>
+              <h4 data-i18n="support.employee.title">Employee Volunteering</h4>
+              <p data-i18n="support.employee.desc">Send skilled employees to train teachers and students in digital literacy, coding, and AI tools as part of your CSR program.</p>
             </div>
             <div class="support-card">
               <i class="fas fa-handshake"></i>
-              <h4>Strategic Partnership</h4>
-              <p>Co-develop educational programs, provide software licenses, or support our scaling strategy across new regions.</p>
+              <h4 data-i18n="support.partner.title">Strategic Partnership</h4>
+              <p data-i18n="support.partner.desc">Co-develop educational programs, provide software licenses, or support our scaling strategy across new regions.</p>
             </div>
           </div>
         </div>
@@ -444,16 +445,16 @@
       <!-- Donate CTA -->
       <div class="donate-cta" data-animate="fade-up">
         <div class="donate-cta-content">
-          <h3>Every Contribution Counts</h3>
-          <p>100% of donations go directly to education programs. Bank transfers have zero transaction fees.</p>
+          <h3 data-i18n="cta.title">Every Contribution Counts</h3>
+          <p data-i18n="cta.desc">100% of donations go directly to education programs. Bank transfers have zero transaction fees.</p>
         </div>
         <div class="donate-cta-buttons">
           <a href="https://bongai-shamwari.org/en/donations-digital-education/" target="_blank" rel="noopener" class="btn btn-accent btn-lg">
-            <span>Donate Now</span>
+            <span data-i18n="cta.donate">Donate Now</span>
             <i class="fas fa-heart"></i>
           </a>
           <a href="#contact" class="btn btn-ghost btn-lg">
-            <span>Become a Sponsor</span>
+            <span data-i18n="cta.sponsor">Become a Sponsor</span>
             <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -461,7 +462,7 @@
 
       <!-- Sponsors Lane -->
       <div class="sponsors-lane" data-animate="fade-up">
-        <p class="sponsors-label">Our Partners &amp; Sponsors</p>
+        <p class="sponsors-label" data-i18n="sponsors.label">Our Partners &amp; Sponsors</p>
         <div class="sponsors-row">
           <div class="sponsor-item sponsor-main">
             <img src="assets/images/Logos/Trelleborg Corporate logo.jpg" alt="Trelleborg">
@@ -471,7 +472,7 @@
           </div>
           <a href="#contact" class="sponsor-item sponsor-placeholder">
             <i class="fas fa-plus"></i>
-            <span>Here could be your logo</span>
+            <span data-i18n="sponsor.placeholder">Here could be your logo</span>
           </a>
         </div>
       </div>
@@ -483,9 +484,9 @@
     <div class="container">
       <div class="contact-layout">
         <div class="contact-left" data-animate="fade-up">
-          <span class="section-label section-label-orange">Get Involved</span>
-          <h2 class="section-title">Let's Build the Future of Education</h2>
-          <p class="contact-desc">
+          <span class="section-label section-label-orange" data-i18n="contact.label">Get Involved</span>
+          <h2 class="section-title" data-i18n="contact.title">Let's Build the Future of Education</h2>
+          <p class="contact-desc" data-i18n="contact.desc">
             Whether you're an investor, educator, potential partner, or simply
             curious about our work — we'd love to hear from you.
           </p>
@@ -496,7 +497,7 @@
             </div>
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Zurich, Switzerland (HQ)</span>
+              <span data-i18n="contact.location">Zurich, Switzerland (HQ)</span>
             </div>
           </div>
           <div class="social-links">
@@ -507,34 +508,34 @@
         </div>
         <div class="contact-right" data-animate="fade-up" data-delay="100">
           <form class="contact-form" id="contactForm">
-            <h3 class="form-title">Send us a message</h3>
+            <h3 class="form-title" data-i18n="contact.form.title">Send us a message</h3>
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your full name">
+              <label for="name" data-i18n="form.name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" data-i18n-ph="form.name.ph">
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com">
+              <label for="email" data-i18n="form.email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" data-i18n-ph="form.email.ph">
             </div>
             <div class="form-group">
-              <label for="interest">I'm interested as...</label>
+              <label for="interest" data-i18n="form.interest">I'm interested as...</label>
               <select id="interest" name="interest" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="donor">A Donor</option>
-                <option value="sponsor">A Corporate Sponsor</option>
-                <option value="teacher">A Teacher</option>
-                <option value="student">A Student</option>
-                <option value="volunteer">A Volunteer</option>
-                <option value="partner">A Partner Organization</option>
-                <option value="other">Other</option>
+                <option value="" disabled selected data-i18n="form.select">Select an option</option>
+                <option value="donor" data-i18n="form.donor">A Donor</option>
+                <option value="sponsor" data-i18n="form.corp_sponsor">A Corporate Sponsor</option>
+                <option value="teacher" data-i18n="form.teacher_role">A Teacher</option>
+                <option value="student" data-i18n="form.student_role">A Student</option>
+                <option value="volunteer" data-i18n="form.volunteer">A Volunteer</option>
+                <option value="partner" data-i18n="form.partner_role">A Partner Organization</option>
+                <option value="other" data-i18n="form.other">Other</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Tell us how you'd like to get involved..."></textarea>
+              <label for="message" data-i18n="form.message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us how you'd like to get involved..." data-i18n-ph="form.message.ph"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-full">
-              <span>Send Message</span>
+              <span data-i18n="form.submit">Send Message</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -555,21 +556,21 @@
               <span class="logo-tagline">EDUCATIONAL EMPOWERMENT</span>
             </div>
           </a>
-          <p class="footer-description">Empowering every child through access to free education using technology.</p>
+          <p class="footer-description" data-i18n="footer.desc">Empowering every child through access to free education using technology.</p>
         </div>
         <div class="footer-links-group">
-          <h4>Navigation</h4>
+          <h4 data-i18n="footer.nav">Navigation</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Our Work</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#support">Support Us</a></li>
+            <li><a href="#about" data-i18n="footer.about">About</a></li>
+            <li><a href="#gallery" data-i18n="footer.work">Our Work</a></li>
+            <li><a href="#resources" data-i18n="footer.resources">Resources</a></li>
+            <li><a href="#support" data-i18n="footer.support">Support Us</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
-          <h4>Connect</h4>
+          <h4 data-i18n="footer.connect">Connect</h4>
           <ul>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact" data-i18n="footer.contact">Contact Us</a></li>
             <li><a href="https://ch.linkedin.com/company/ctwp-educationlempowerment" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://www.instagram.com/ctwp_educationalempowerment/" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/profile.php?id=100091277141645" target="_blank" rel="noopener">Facebook</a></li>
@@ -578,12 +579,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 CTWP Educational Empowerment. All rights reserved.</p>
+        <p data-i18n="footer.copyright">&copy; 2026 CTWP Educational Empowerment. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

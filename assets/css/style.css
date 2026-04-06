@@ -213,6 +213,24 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 }
 .nav-link:hover, .nav-link.active { color: var(--white); }
 
+/* Language Toggle */
+.lang-toggle {
+  display: flex; align-items: center; gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.lang-toggle:hover {
+  background: rgba(255,255,255,0.16);
+  color: var(--white);
+}
+
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 0.5rem; }
 .hamburger span {
