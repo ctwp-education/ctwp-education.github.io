@@ -251,9 +251,13 @@ function applyTranslations() {
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     el.placeholder = t(el.dataset.i18nPh);
   });
-  /* Update toggle button — show current language */
+  /* Update toggle button — highlight active language */
   const btn = document.getElementById('langToggle');
-  if (btn) btn.innerHTML = currentLang === 'en' ? '🇺🇸 EN' : '🇩🇪 DE';
+  if (btn) {
+    btn.querySelectorAll('.lang-opt').forEach(opt => {
+      opt.classList.toggle('lang-active', opt.dataset.lang === currentLang);
+    });
+  }
   /* Update html lang attribute */
   document.documentElement.lang = currentLang;
 }

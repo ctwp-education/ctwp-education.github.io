@@ -215,21 +215,21 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 
 /* Language Toggle */
 .lang-toggle {
-  display: flex; align-items: center; gap: 0.35rem;
-  padding: 0.3rem 0.75rem;
+  display: flex; align-items: center; gap: 0.25rem;
+  padding: 0.3rem 0.65rem;
   font-size: 0.8rem; font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: var(--white);
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: all var(--transition);
+  transition: background var(--transition);
   white-space: nowrap;
 }
-.lang-toggle:hover {
-  background: rgba(255,255,255,0.16);
-  color: var(--white);
-}
+.lang-toggle:hover { background: rgba(255,255,255,0.16); }
+.lang-opt { opacity: 0.35; transition: opacity var(--transition); }
+.lang-opt.lang-active { opacity: 1; }
+.lang-sep { opacity: 0.25; margin: 0 0.1rem; font-weight: 300; }
 
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 0.5rem; }
