@@ -227,9 +227,10 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   white-space: nowrap;
 }
 .lang-toggle:hover { background: rgba(255,255,255,0.16); }
-.lang-opt { opacity: 0.35; transition: opacity var(--transition); }
+.lang-opt { opacity: 0.35; transition: opacity var(--transition); display: inline-flex; align-items: center; gap: 0.3rem; }
 .lang-opt.lang-active { opacity: 1; }
 .lang-sep { opacity: 0.25; margin: 0 0.1rem; font-weight: 300; }
+.lang-opt .fi { width: 1.2em; height: 0.9em; border-radius: 2px; }
 
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 0.5rem; }
