@@ -446,7 +446,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .stat-cta {
   display: inline-block;
   font-size: 0.68rem;
-  color: #1a1a1a;
+  color: #ffffff;
   background: var(--orange-400);
   margin-top: 0.6rem;
   font-weight: 700;
