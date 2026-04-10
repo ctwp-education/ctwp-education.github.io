@@ -1125,10 +1125,14 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   color: var(--white);
   margin-bottom: 0.35rem;
 }
+.donate-cta-content {
+  flex: 1;
+  min-width: 0;
+}
 .donate-cta-content p {
   color: rgba(255,255,255,0.7);
   font-size: 0.82rem;
-  white-space: nowrap;
+  line-height: 1.5;
 }
 .donate-cta-buttons {
   display: flex;
