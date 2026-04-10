@@ -434,6 +434,23 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   margin-top: 0.35rem;
   font-weight: 500;
 }
+.stat-item-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition);
+  display: block;
+}
+.stat-item-link:hover { transform: translateY(-2px); }
+.stat-item-link:hover .stat-number,
+.stat-item-link:hover .stat-plus { color: var(--orange-400); }
+.stat-cta {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--orange-400);
+  margin-top: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
 
 /* ---------- About ---------- */
 .section-label-orange {

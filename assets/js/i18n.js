@@ -10,7 +10,7 @@ const translations = {
     'hero.subtitle': 'CTWP Educational Empowerment bridges the gap between learners and free, open-source knowledge — testing technology in real classrooms, for real impact.',
     'hero.cta.resources': 'Explore Resources', 'hero.cta.support': 'Support Us', 'hero.cta.about': 'About the Project',
     'stat.countries': 'Countries Visited', 'stat.schools': 'Schools Visited',
-    'stat.students': 'Students Reached', 'stat.labs': 'Computer Lab Built',
+    'stat.students': 'Students Reached', 'stat.labs': 'Computer Lab Built', 'stat.labs.cta': 'See the Lab →',
     /* About */
     'about.label': 'About the Project', 'about.title': 'What We Do',
     'vision.title': 'Our Vision',
@@ -133,7 +133,7 @@ const translations = {
     'hero.subtitle': 'CTWP Educational Empowerment überbrückt die Lücke zwischen Lernenden und freiem, offenem Wissen — Technologie wird in echten Klassenzimmern für echte Wirkung getestet.',
     'hero.cta.resources': 'Ressourcen entdecken', 'hero.cta.support': 'Unterstützen', 'hero.cta.about': 'Über das Projekt',
     'stat.countries': 'Besuchte Länder', 'stat.schools': 'Besuchte Schulen',
-    'stat.students': 'Erreichte Schüler', 'stat.labs': 'Computerraum errichtet',
+    'stat.students': 'Erreichte Schüler', 'stat.labs': 'Computerraum errichtet', 'stat.labs.cta': 'Zum Computer Lab →',
     /* About */
     'about.label': 'Über das Projekt', 'about.title': 'Was wir tun',
     'vision.title': 'Unsere Vision',
