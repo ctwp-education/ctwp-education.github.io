@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zimbabwe Computer Lab — How CTWP and Bongai Shamwari built the first digital learning lab for disadvantaged children in Zimbabwe.">
+  <meta name="author" content="CTWP Educational Empowerment">
+  <title>Computer Lab Zimbabwe — CTWP Educational Empowerment</title>
+
+  <!-- DNS / Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=9">
+
+  <!-- Non-render-blocking: Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Non-render-blocking: Font Awesome -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+  <!-- Non-render-blocking: Flag icons -->
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"></noscript>
+
+  <!-- Favicon & preload hero -->
+  <link rel="icon" type="image/webp" href="assets/images/Logos/ctwp logo round.webp">
+  <link rel="preload" as="image" href="assets/images/Computer Lab/lab-hero.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6JYDY61WX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W6JYDY61WX');
+  </script>
+
+  <style>
+    /* ── Lab page specific styles ── */
+
+    /* Hero */
+    .lab-hero {
+      background: var(--green-900, #0f2d1a);
+      padding: 6rem 0 0;
+      overflow: hidden;
+    }
+    .lab-hero-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+    }
+    .lab-hero-content { padding-bottom: 4rem; }
+    .lab-hero-content .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--cream);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.5rem;
+    }
+    .lab-hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .lab-hero-content h1 em {
+      color: var(--orange-400);
+      font-style: italic;
+    }
+    .lab-hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+    .lab-hero-img {
+      position: relative;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      overflow: hidden;
+      aspect-ratio: 1;
+      max-height: 480px;
+    }
+    .lab-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .lab-hero-badge-zw {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: var(--orange-500);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Breadcrumb */
+    .lab-breadcrumb {
+      background: var(--green-900, #0f2d1a);
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .lab-breadcrumb .container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .lab-breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .lab-breadcrumb a:hover { color: var(--orange-400); }
+    .lab-breadcrumb i { font-size: 0.65rem; }
+
+    /* Intro section */
+    .lab-intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .lab-intro-text blockquote {
+      border-left: 3px solid var(--orange-400);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--gray-600);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+    .lab-signatures {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .lab-sig {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .lab-sig-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--green-700);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .lab-sig-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .lab-sig-name { font-weight: 600; font-size: 0.9rem; color: var(--gray-800); }
+    .lab-sig-role { font-size: 0.78rem; color: var(--gray-500); }
+    .lab-intro-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lab-intro-img-wrap img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--radius-lg);
+    }
+    .lab-intro-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      color: white;
+      padding: 1.5rem 1rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Milestones */
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .milestone-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .milestone-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .milestone-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .milestone-icon i { color: var(--green-700); font-size: 1.2rem; }
+    .milestone-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.4rem;
+    }
+    .milestone-card p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .milestone-done {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green-700);
+      background: var(--green-100);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      margin-top: 0.75rem;
+    }
+
+    /* Photo gallery grid */
+    .lab-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .lab-gallery-grid .lab-gimg {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+    .lab-gallery-grid .lab-gimg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .lab-gallery-grid .lab-gimg:hover img { transform: scale(1.04); }
+    .lab-gimg-wide {
+      grid-column: span 2;
+      aspect-ratio: 2 / 1 !important;
+    }
+
+    /* Next steps */
+    .nextsteps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .nextstep-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+    .nextstep-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--orange-500);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nextstep-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.3rem;
+    }
+    .nextstep-item p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Contacts */
+    .lab-contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 780px;
+      margin: 3rem auto 0;
+    }
+    .lab-contact-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+    }
+    .lab-contact-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--green-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--green-700);
+      font-weight: 700;
+    }
+    .lab-contact-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .lab-contact-card .contact-role { font-size: 0.82rem; color: var(--orange-500); font-weight: 600; margin-bottom: 1rem; }
+    .lab-contact-card .contact-org { font-size: 0.8rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .lab-contact-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .lab-contact-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .lab-contact-links a:hover { color: var(--green-700); }
+    .lab-contact-links i { color: var(--green-600); width: 16px; }
+
+    /* CTA banner */
+    .lab-cta-banner {
+      background: linear-gradient(135deg, var(--green-800), var(--green-700));
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .lab-cta-banner h2 {
+      font-family: var(--font-display);
+      color: var(--cream);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+    .lab-cta-banner p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .lab-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .lab-hero-inner { grid-template-columns: 1fr; }
+      .lab-hero-img { border-radius: var(--radius-lg); max-height: 360px; }
+      .lab-hero-content { padding-bottom: 2rem; }
+      .lab-intro-grid { grid-template-columns: 1fr; }
+      .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+      .lab-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .lab-gimg-wide { grid-column: span 1; aspect-ratio: 1 !important; }
+      .lab-contacts-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+    @media (max-width: 600px) {
+      .milestones-grid { grid-template-columns: 1fr; }
+      .lab-gallery-grid { grid-template-columns: 1fr 1fr; }
+      .nextstep-item { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <span class="loader-text">CTWP</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/Logos/ctwp logo round.webp" alt="CTWP Logo" class="logo-img" fetchpriority="high">
+        <div class="logo-text">
+          <span class="logo-name">CTWP</span>
+          <span class="logo-tagline">EDUCATIONAL EMPOWERMENT</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="index.html#gallery" class="nav-link" data-i18n="nav.work">Our Work</a></li>
+        <li><a href="index.html#resources" class="nav-link" data-i18n="nav.resources">Resources</a></li>
+        <li><a href="index.html#support" class="nav-link" data-i18n="nav.support">Support Us</a></li>
+        <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <button id="langToggle" class="lang-toggle"><span class="lang-opt" data-lang="en"><span class="fi fi-us"></span> EN</span><span class="lang-sep">|</span><span class="lang-opt" data-lang="de"><span class="fi fi-de"></span> DE</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html#about" class="mobile-link" data-i18n="nav.about">About</a></li>
+      <li><a href="index.html#gallery" class="mobile-link" data-i18n="nav.work">Our Work</a></li>
+      <li><a href="index.html#resources" class="mobile-link" data-i18n="nav.resources">Resources</a></li>
+      <li><a href="index.html#support" class="mobile-link" data-i18n="nav.support">Support Us</a></li>
+      <li><a href="index.html#contact" class="mobile-link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="lab-hero">
+    <div class="lab-hero-inner">
+      <div class="lab-hero-content" data-animate="fade-up">
+        <div class="hero-badge">
+          <span class="fi fi-zw" style="font-size:1em;"></span>
+          Zimbabwe · Bongai Shamwari · 2025
+        </div>
+        <h1>Our <em>Computer Lab</em> in Zimbabwe</h1>
+        <p data-i18n="lab.hero.subtitle">A fully equipped digital learning lab for disadvantaged and disabled children — powered by solar energy, Starlink internet, and the belief that every child deserves access to technology.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="index.html#support" class="btn btn-accent btn-lg">
+            <span data-i18n="lab.hero.cta1">Support This Project</span>
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="#milestones" class="btn btn-ghost btn-lg">
+            <span data-i18n="lab.hero.cta2">See What We Built</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+      <div class="lab-hero-img" data-animate="fade-up" data-delay="200">
+        <img src="assets/images/Computer Lab/lab-hero.webp" alt="First ICT lesson at Bongai Shamwari School" fetchpriority="high">
+        <div class="lab-hero-badge-zw">Phase 3 · Build</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="lab-breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Computer Lab Zimbabwe</span>
+    </div>
+  </div>
+
+  <!-- Thank You / Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="lab-intro-grid">
+        <div class="lab-intro-text" data-animate="fade-up">
+          <span class="section-label-orange section-label" data-i18n="lab.intro.label">Status Report 2025</span>
+          <h2 class="section-title" style="text-align:left;font-size:clamp(1.8rem,4vw,2.5rem);" data-i18n="lab.intro.title">Thank You for Your Support!</h2>
+          <blockquote data-i18n="lab.intro.quote">
+            "For disadvantaged and disabled children in Zimbabwe, Bongai Shamwari is far more than a place of learning — it is a source of hope, opportunity, and community."
+          </blockquote>
+          <p style="color:var(--gray-700);line-height:1.75;margin-bottom:1rem;" data-i18n="lab.intro.p1">
+            Your generous contribution in 2025 has been instrumental in advancing the digitalization project at the Bongai Shamwari kindergarten and school. Thanks to your support, we have built sustainable digital infrastructure that opens the door to knowledge and new learning opportunities for the children, their teachers, and the wider community.
+          </p>
+          <p style="color:var(--gray-700);line-height:1.75;" data-i18n="lab.intro.p2">
+            Your commitment is helping to shape a future in which every child can explore their potential and participate fully in the digital world. Each step brings us closer to our goal: making education accessible to all, regardless of external challenges.
+          </p>
+          <div class="lab-signatures">
+            <div class="lab-sig">
+              <div class="lab-sig-avatar">LG</div>
+              <div>
+                <div class="lab-sig-name">Lars Gottwals</div>
+                <div class="lab-sig-role">Digital Montessori Project Lead · CTWP</div>
+              </div>
+            </div>
+            <div class="lab-sig">
+              <div class="lab-sig-avatar">CZ</div>
+              <div>
+                <div class="lab-sig-name">Christa Zeller</div>
+                <div class="lab-sig-role">Chairman · Bongai Shamwari e.V.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lab-intro-img-wrap" data-animate="fade-up" data-delay="150">
+          <img src="assets/images/Computer Lab/lab-smile.webp" alt="Child smiling at the computer lab" loading="lazy">
+          <div class="lab-intro-img-caption">Bongai Shamwari School, Zimbabwe — 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones 2025 -->
+  <section id="milestones" class="section" style="background:var(--gray-50,#f8f9fa);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label" data-i18n="lab.milestones.label">Completed in 2025</span>
+        <h2 class="section-title" data-i18n="lab.milestones.title">What We Built Together</h2>
+        <p class="section-subtitle" data-i18n="lab.milestones.subtitle">From laying the foundations to the first ICT lessons — every milestone reached thanks to your support.</p>
+      </div>
+      <div class="milestones-grid" data-animate="fade-up">
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-sun"></i></div>
+          <h4 data-i18n="lab.m1.title">Solar Energy Installation</h4>
+          <p data-i18n="lab.m1.desc">Full solar power system installed, ensuring reliable and sustainable electricity for the computer lab.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-hammer"></i></div>
+          <h4 data-i18n="lab.m2.title">Room Preparation</h4>
+          <p data-i18n="lab.m2.desc">Computer lab interior fully prepared, including tables and chairs purchased locally to support the community.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-shield-halved"></i></div>
+          <h4 data-i18n="lab.m3.title">Security Enhancements</h4>
+          <p data-i18n="lab.m3.desc">Burglar bars and additional security cameras installed to protect all equipment.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-wifi"></i></div>
+          <h4 data-i18n="lab.m4.title">Starlink Internet</h4>
+          <p data-i18n="lab.m4.desc">Starlink internet system installed, providing reliable high-speed connectivity to support digital learning.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-desktop"></i></div>
+          <h4 data-i18n="lab.m5.title">Computers Delivered</h4>
+          <p data-i18n="lab.m5.desc">All computers including peripherals shipped to the school; monitors purchased locally.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-gear"></i></div>
+          <h4 data-i18n="lab.m6.title">Technical Setup</h4>
+          <p data-i18n="lab.m6.desc">All hardware and software installed for classroom use, including educational tools and child-friendly access controls.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-user-tie"></i></div>
+          <h4 data-i18n="lab.m7.title">ICT Teacher Hired</h4>
+          <p data-i18n="lab.m7.desc">A qualified ICT teacher hired after thorough interviews to ensure the best fit for the program.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4 data-i18n="lab.m8.title">First ICT Lessons</h4>
+          <p data-i18n="lab.m8.desc">Introductory sessions for students and teachers successfully started, introducing foundational digital literacy skills.</p>
+          <span class="milestone-done"><i class="fas fa-check"></i> Done</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label" data-i18n="lab.gallery.label">Impressions</span>
+        <h2 class="section-title" data-i18n="lab.gallery.title">Inside the Computer Lab</h2>
+        <p class="section-subtitle" data-i18n="lab.gallery.subtitle">Real moments from the first lessons at Bongai Shamwari School, Zimbabwe.</p>
+      </div>
+      <div class="lab-gallery-grid" data-animate="fade-up">
+        <div class="lab-gimg lab-gimg-wide">
+          <img src="assets/images/Computer Lab/lab-class.webp" alt="ICT class in session" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-learning.webp" alt="Child learning on computer" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-happy.webp" alt="Child smiling with laptop" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-teacher.webp" alt="ICT teacher with student" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-drawing.webp" alt="Child drawing on computer" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-teamwork.webp" alt="Teacher supporting child at computer" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-teacher2.webp" alt="Teacher at computer station" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-inclusive.webp" alt="Inclusive learning — child with disability" loading="lazy">
+        </div>
+        <div class="lab-gimg">
+          <img src="assets/images/Computer Lab/lab-hands.webp" alt="Hands-on learning with keyboard and USB" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps 2026 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label-orange section-label" data-i18n="lab.nextsteps.label">Looking Ahead</span>
+        <h2 class="section-title" data-i18n="lab.nextsteps.title">Next Steps — 2026 &amp; Beyond</h2>
+        <p class="section-subtitle" data-i18n="lab.nextsteps.subtitle">The lab is running — now we need to sustain and grow it. Here's what comes next.</p>
+      </div>
+      <div class="nextsteps-list" data-animate="fade-up">
+        <div class="nextstep-item">
+          <div class="nextstep-num">1</div>
+          <div>
+            <h4 data-i18n="lab.ns1.title">Secure Sponsorship for the ICT Teacher's Salary</h4>
+            <p data-i18n="lab.ns1.desc">Identify donors, partners, or CSR programs to fund the full-time ICT educator — ensuring long-term sustainability of the digital learning program.</p>
+          </div>
+        </div>
+        <div class="nextstep-item">
+          <div class="nextstep-num">2</div>
+          <div>
+            <h4 data-i18n="lab.ns2.title">Ship Remaining Equipment &amp; Classroom Enhancements</h4>
+            <p data-i18n="lab.ns2.desc">Ship printer, projector, mouse pads, and USB sticks; purchase locally a shelf for storing equipment, dust-proof computer covers, and ICT schoolbooks.</p>
+          </div>
+        </div>
+        <div class="nextstep-item">
+          <div class="nextstep-num">3</div>
+          <div>
+            <h4 data-i18n="lab.ns3.title">Launch Full ICT Curriculum</h4>
+            <p data-i18n="lab.ns3.desc">Begin the first official teaching term of ICT as a structured subject at Bongai Shamwari — turning the pilot lessons into a complete digital education program.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" style="background:var(--gray-50,#f8f9fa);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label" data-i18n="lab.contact.label">Get in Touch</span>
+        <h2 class="section-title" data-i18n="lab.contact.title">Contact the Project Team</h2>
+        <p class="section-subtitle" data-i18n="lab.contact.subtitle">Questions about the lab, partnership opportunities, or how to contribute? Reach out directly.</p>
+      </div>
+      <div class="lab-contacts-grid" data-animate="fade-up">
+        <div class="lab-contact-card">
+          <div class="lab-contact-avatar">LG</div>
+          <h4>Lars Gottwals</h4>
+          <p class="contact-role" data-i18n="lab.contact.lars.role">Digital Montessori Project Lead</p>
+          <p class="contact-org">CTWP Educational Empowerment</p>
+          <div class="lab-contact-links">
+            <a href="mailto:lars.gottwals@gmail.com"><i class="fas fa-envelope"></i> lars.gottwals@gmail.com</a>
+            <a href="tel:+41798155020"><i class="fas fa-phone"></i> +41 79 815 5020</a>
+          </div>
+        </div>
+        <div class="lab-contact-card">
+          <div class="lab-contact-avatar">CZ</div>
+          <h4>Christa Zeller</h4>
+          <p class="contact-role" data-i18n="lab.contact.christa.role">Chairman</p>
+          <p class="contact-org">Bongai Shamwari e.V.</p>
+          <div class="lab-contact-links">
+            <a href="mailto:christa@beizeller.de"><i class="fas fa-envelope"></i> christa@beizeller.de</a>
+            <a href="tel:+491609203999"><i class="fas fa-phone"></i> +49 160 9203 7999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="lab-cta-banner">
+    <div class="container">
+      <h2 data-i18n="lab.cta.title">Help Us Keep the Lab Running</h2>
+      <p data-i18n="lab.cta.subtitle">Your donation directly funds the ICT teacher's salary, new equipment, and the continued education of children who have never had access to a computer before.</p>
+      <div class="lab-cta-buttons">
+        <a href="index.html#support" class="btn btn-accent btn-lg">
+          <span data-i18n="lab.cta.btn1">Donate Now</span>
+          <i class="fas fa-heart"></i>
+        </a>
+        <a href="https://bongai-shamwari.org/en/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <span data-i18n="lab.cta.btn2">Bongai Shamwari Website</span>
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="index.html" class="btn btn-ghost btn-lg">
+          <span data-i18n="lab.cta.btn3">← Back to CTWP</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/images/Logos/ctwp logo round.webp" alt="CTWP Logo" class="logo-img" loading="lazy">
+            <div class="logo-text">
+              <span class="logo-name">CTWP</span>
+              <span class="logo-tagline">EDUCATIONAL EMPOWERMENT</span>
+            </div>
+          </a>
+          <p class="footer-description" data-i18n="footer.desc">Empowering every child through access to free education using technology.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.nav">Navigation</h4>
+          <ul>
+            <li><a href="index.html#about" data-i18n="footer.about">About</a></li>
+            <li><a href="index.html#gallery" data-i18n="footer.work">Our Work</a></li>
+            <li><a href="index.html#resources" data-i18n="footer.resources">Resources</a></li>
+            <li><a href="index.html#support" data-i18n="footer.support">Support Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.connect">Connect</h4>
+          <ul>
+            <li><a href="index.html#contact" data-i18n="footer.contact">Contact Us</a></li>
+            <li><a href="https://ch.linkedin.com/company/ctwp-educationlempowerment" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/ctwp_educationalempowerment/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100091277141645" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://bongai-shamwari.org/en/" target="_blank" rel="noopener">Bongai Shamwari</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2026 CTWP Educational Empowerment. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- GDPR Cookie Banner -->
+  <div id="gdprBanner" class="gdpr-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="gdpr-inner">
+      <div class="gdpr-text">
+        <strong data-i18n="gdpr.title">Cookie &amp; Storage Notice</strong>
+        <p data-i18n="gdpr.text">We use browser local storage solely to remember your language preference. No tracking cookies or personal data are collected or shared.</p>
+      </div>
+      <div class="gdpr-actions">
+        <button class="gdpr-btn gdpr-accept" id="gdprAccept" data-i18n="gdpr.accept">Accept</button>
+        <button class="gdpr-btn gdpr-decline" id="gdprDecline" data-i18n="gdpr.decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js?v=2"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var GDPR_KEY = 'ctwp-gdpr';
+      var banner = document.getElementById('gdprBanner');
+      if (!banner) return;
+      function hideBanner() {
+        banner.style.transition = 'transform 0.4s ease';
+        banner.style.transform = 'translateY(110%)';
+      }
+      function showBanner() {
+        banner.style.display = 'block';
+        banner.style.transform = 'translateY(110%)';
+        banner.style.transition = 'none';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            banner.style.transition = 'transform 0.45s cubic-bezier(.4,0,.2,1)';
+            banner.style.transform = 'translateY(0)';
+          });
+        });
+      }
+      if (!localStorage.getItem(GDPR_KEY)) {
+        setTimeout(showBanner, 900);
+      }
+      document.getElementById('gdprAccept').addEventListener('click', function () {
+        localStorage.setItem(GDPR_KEY, 'accepted');
+        hideBanner();
+      });
+      document.getElementById('gdprDecline').addEventListener('click', function () {
+        localStorage.setItem(GDPR_KEY, 'declined');
+        hideBanner();
+      });
+    })();
+  </script>
+</body>
+</html>
