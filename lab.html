@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- v16 -->
+  <!-- v17 -->
   <meta name="description" content="How CTWP Educational Empowerment and Bongai Shamwari e.V. built the first solar-powered computer lab for disadvantaged children in Mutare, Zimbabwe — bringing digital education to those who need it most.">
   <meta name="keywords" content="computer lab Zimbabwe, digital education Zimbabwe, Mutare Zimbabwe school, CTWP computer lab, Bongai Shamwari, educational technology Africa, solar powered school Zimbabwe">
   <meta name="author" content="CTWP Educational Empowerment">
@@ -191,7 +191,7 @@
     /* ── Partnership banner ── */
     .lab-partnership-banner {
       display: grid;
-      grid-template-columns: 1fr 280px;
+      grid-template-columns: 1fr 210px 260px;
       gap: 0;
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -200,55 +200,17 @@
       border: 1px solid var(--gray-200);
       background: var(--white);
     }
-    /* Left column — logos + text */
-    .lab-partner-logos-col {
-      padding: 1.75rem 2rem;
+    /* Left — text */
+    .lab-partner-text-col {
+      padding: 2rem 2.25rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 0;
-    }
-    /* Logo row: two logos side by side */
-    .lab-partner-logo-row {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: 1.25rem;
-    }
-    .lab-partner-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 80px;
-      height: 80px;
-    }
-    .lab-partner-logo-wrap img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));
-    }
-    .lab-partner-divider {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0 1rem;
-      flex-shrink: 0;
-    }
-    .lab-partner-divider-line {
-      width: 14px;
-      height: 1px;
-      background: var(--gray-300, #d1d5db);
-    }
-    .lab-partner-divider-x {
-      font-size: 0.85rem;
-      color: var(--gray-300, #d1d5db);
-      font-weight: 300;
-      line-height: 1;
+      border-right: 1px solid var(--gray-200);
     }
     .lab-partner-tag {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
+      align-self: flex-start;
       font-size: 0.58rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -258,28 +220,13 @@
       border: 1px solid var(--green-200, #bbf7d0);
       border-radius: var(--radius-full);
       padding: 0.22rem 0.65rem;
-      white-space: nowrap;
-      margin-left: 1rem;
-    }
-    /* Text below logo row */
-    .lab-partner-text-col {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .lab-partner-text-col .eyebrow {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--orange-500);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
     }
     .lab-partner-text-col h4 {
       font-family: var(--font-display);
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       color: var(--gray-900);
-      margin: 0 0 0.55rem;
+      margin: 0 0 0.6rem;
       line-height: 1.25;
     }
     .lab-partner-text-col p {
@@ -288,33 +235,71 @@
       line-height: 1.65;
       margin: 0;
     }
-    /* Right column — map, full image */
+    /* Centre — logos (big, stacked) */
+    .lab-partner-logos-col {
+      background: var(--gray-50, #f8f9fa);
+      border-right: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.75rem 1.25rem;
+      gap: 0;
+    }
+    .lab-partner-logo-wrap img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+    }
+    .lab-partner-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      margin: 0.65rem 0;
+    }
+    .lab-partner-divider-line {
+      width: 1px;
+      height: 12px;
+      background: var(--gray-300, #d1d5db);
+    }
+    .lab-partner-divider-x {
+      font-size: 0.85rem;
+      color: var(--gray-300, #d1d5db);
+      font-weight: 300;
+      line-height: 1;
+    }
+    /* Right — map */
     .lab-partner-map-col {
       background: #f3f8f3;
-      border-left: 1px solid var(--gray-200);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem 1rem;
-      min-height: 220px;
+      padding: 1.5rem 1.25rem;
+      min-height: 240px;
     }
     .lab-partner-map-col img {
       width: 100%;
-      max-width: 220px;
+      max-width: 210px;
       height: auto;
       display: block;
       object-fit: contain;
       filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
     }
-    @media (max-width: 860px) {
-      .lab-partnership-banner { grid-template-columns: 1fr 220px; }
-      .lab-partner-logo-wrap img { width: 60px; height: 60px; }
+    @media (max-width: 900px) {
+      .lab-partnership-banner { grid-template-columns: 1fr 180px 220px; }
+      .lab-partner-logo-wrap img { width: 88px; height: 88px; }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 650px) {
       .lab-partnership-banner { grid-template-columns: 1fr; }
-      .lab-partner-logos-col { padding: 1.5rem 1.5rem 1.25rem; }
-      .lab-partner-map-col { border-left: none; border-top: 1px solid var(--gray-200); min-height: 160px; padding: 1.25rem; }
-      .lab-partner-map-col img { max-width: 160px; }
+      .lab-partner-text-col { border-right: none; border-bottom: 1px solid var(--gray-200); }
+      .lab-partner-logos-col { flex-direction: row; border-right: none; border-bottom: 1px solid var(--gray-200); padding: 1.25rem 2rem; gap: 0; }
+      .lab-partner-divider { flex-direction: row; margin: 0 1rem; }
+      .lab-partner-divider-line { width: 12px; height: 1px; }
+      .lab-partner-logo-wrap img { width: 80px; height: 80px; }
+      .lab-partner-map-col { min-height: 180px; }
     }
 
     /* Milestone grid — 4 columns */
@@ -682,31 +667,27 @@
 
       <!-- Partnership banner -->
       <div class="lab-partnership-banner" data-animate="fade-up">
-        <!-- Left: logos + text -->
+        <!-- Left: text -->
+        <div class="lab-partner-text-col">
+          <span class="lab-partner-tag">Joint Initiative</span>
+          <h4>Built together — from vision to reality</h4>
+          <p>This computer lab is the result of two organisations sharing one conviction: that every child, regardless of where they are born, deserves access to quality digital education. <strong>CTWP Educational Empowerment</strong> and <strong>Bongai Shamwari e.V.</strong> pooled their expertise, networks, and resources to make it happen — from fundraising and procurement to installation and the first lesson.</p>
+        </div>
+        <!-- Centre: logos (big, stacked) -->
         <div class="lab-partner-logos-col">
-          <!-- Logo row -->
-          <div class="lab-partner-logo-row">
-            <div class="lab-partner-logo-wrap">
-              <img src="assets/images/Logos/ctwp logo round.webp" alt="CTWP Educational Empowerment">
-            </div>
-            <div class="lab-partner-divider">
-              <div class="lab-partner-divider-line"></div>
-              <span class="lab-partner-divider-x">×</span>
-              <div class="lab-partner-divider-line"></div>
-            </div>
-            <div class="lab-partner-logo-wrap">
-              <img src="assets/images/Computer Lab/lab-bongai-logo.webp" alt="Bongai Shamwari e.V.">
-            </div>
-            <span class="lab-partner-tag">Joint Initiative</span>
+          <div class="lab-partner-logo-wrap">
+            <img src="assets/images/Logos/ctwp logo round.webp" alt="CTWP Educational Empowerment">
           </div>
-          <!-- Text -->
-          <div class="lab-partner-text-col">
-            <span class="eyebrow">A joint initiative</span>
-            <h4>Built together — from vision to reality</h4>
-            <p>This computer lab is the result of two organisations sharing one conviction: that every child, regardless of where they are born, deserves access to quality digital education. <strong>CTWP Educational Empowerment</strong> and <strong>Bongai Shamwari e.V.</strong> pooled their expertise, networks, and resources to make it happen — from fundraising and procurement to installation and the first lesson.</p>
+          <div class="lab-partner-divider">
+            <div class="lab-partner-divider-line"></div>
+            <span class="lab-partner-divider-x">×</span>
+            <div class="lab-partner-divider-line"></div>
+          </div>
+          <div class="lab-partner-logo-wrap">
+            <img src="assets/images/Computer Lab/lab-bongai-logo.webp" alt="Bongai Shamwari e.V.">
           </div>
         </div>
-        <!-- Right: Map (full, uncropped) -->
+        <!-- Right: map -->
         <div class="lab-partner-map-col" aria-label="Map of Africa with Zimbabwe marked">
           <img src="assets/images/map.webp" alt="Africa map showing Zimbabwe">
         </div>
