@@ -134,36 +134,111 @@
 
     /* Partnership banner */
     .lab-partnership-banner {
-      background: linear-gradient(135deg, #f0faf4, #e8f5ec);
-      border: 1px solid #c3e6cb;
+      background: linear-gradient(135deg, var(--green-900,#0f2d1a) 0%, #0d3d20 100%);
       border-radius: var(--radius-lg);
-      padding: 1.75rem 2rem;
+      padding: 2rem 2.5rem;
       margin-bottom: 2.5rem;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2.5rem;
       align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .lab-partnership-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
     }
     .lab-partnership-logos-wrap {
       display: flex;
       align-items: center;
       gap: 1rem;
       flex-shrink: 0;
+      position: relative;
     }
-    .lab-partnership-logos-wrap img { height: 60px; width: auto; object-fit: contain; }
+    .lab-partnership-logos-wrap img { height: 64px; width: auto; object-fit: contain; filter: brightness(1.05); }
     .lab-partnership-divider {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.15rem;
+      gap: 0.2rem;
+      padding: 0 0.25rem;
     }
-    .lab-partnership-x { font-size: 1.5rem; color: var(--gray-300); font-weight: 200; line-height: 1; }
-    .lab-partnership-joint { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-700); }
-    .lab-partnership-text { flex: 1; min-width: 200px; }
-    .lab-partnership-text p { font-size: 0.87rem; color: var(--gray-600); line-height: 1.65; margin: 0; }
-    .lab-partnership-text strong { color: var(--green-800); }
-    .lab-partnership-map { flex-shrink: 0; width: 160px; opacity: 0.9; }
-    .lab-partnership-map svg { width: 100%; height: auto; border-radius: 8px; }
+    .lab-partnership-x {
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.25);
+      font-weight: 200;
+      line-height: 1;
+    }
+    .lab-partnership-joint {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+    }
+    .lab-partnership-text {
+      position: relative;
+      border-left: 2px solid rgba(255,255,255,0.12);
+      padding-left: 2rem;
+    }
+    .lab-partnership-text .partner-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange-400,#fb923c);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .lab-partnership-text h4 {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--cream,#fdf6ee);
+      margin: 0 0 0.65rem;
+      line-height: 1.25;
+    }
+    .lab-partnership-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .lab-partnership-text .partner-orgs {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .partner-org-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.28rem 0.75rem;
+      border-radius: var(--radius-full);
+    }
+    .partner-org-pill i { color: var(--orange-400,#fb923c); font-size: 0.65rem; }
+    .lab-partnership-map {
+      flex-shrink: 0;
+      width: 180px;
+      position: relative;
+    }
+    .lab-partnership-map svg { width: 100%; height: auto; border-radius: 10px; display: block; }
+    @media (max-width: 900px) {
+      .lab-partnership-banner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .lab-partnership-text { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem; }
+      .lab-partnership-map { display: none; }
+    }
 
     /* Milestone grid — 4 columns */
     .milestones-grid-compact {
@@ -435,8 +510,6 @@
       .lab-gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .lab-gimg-wide { grid-column: span 1; aspect-ratio: 1 !important; }
       .lab-gallery-videos { max-width: 100%; }
-      .lab-partnership-banner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-      .lab-partnership-map { display: none; }
     }
     @media (max-width: 600px) {
       .milestones-grid-compact { grid-template-columns: 1fr; }
@@ -541,7 +614,13 @@
           <img src="assets/images/Computer Lab/lab-bongai-logo.webp" alt="Bongai Shamwari e.V.">
         </div>
         <div class="lab-partnership-text">
-          <p>This computer lab was realised through the partnership between <strong>CTWP Educational Empowerment</strong> (Switzerland) and <strong>Bongai Shamwari e.V.</strong> (Germany) — connecting European support with Zimbabwean dedication to bring digital education to children who need it most.</p>
+          <span class="partner-eyebrow">A joint initiative</span>
+          <h4>Built together — from vision to reality</h4>
+          <p>This computer lab is the result of two organisations sharing one conviction: that every child, regardless of where they are born, deserves access to quality digital education. <strong style="color:rgba(255,255,255,0.85);">CTWP Educational Empowerment</strong> and <strong style="color:rgba(255,255,255,0.85);">Bongai Shamwari e.V.</strong> pooled their expertise, networks, and resources to make it happen — from fundraising and procurement to installation and the first lesson.</p>
+          <div class="partner-orgs">
+            <span class="partner-org-pill"><i class="fas fa-location-dot"></i> CTWP — Switzerland</span>
+            <span class="partner-org-pill"><i class="fas fa-location-dot"></i> Bongai Shamwari — Germany &amp; Zimbabwe</span>
+          </div>
         </div>
         <div class="lab-partnership-map" aria-hidden="true">
           <!--
@@ -556,84 +635,152 @@
               Tanzania S (30,-11)→(200,126), etc
               Mutare: lon32.66 lat-18.97 → x=253,y=195
           -->
-          <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!--
+            Geographically accurate regional map of southern-central Africa.
+            ViewBox: 340×420. Projection: equirectangular.
+            Longitude range: 20°E – 36°E  →  x = (lon − 20) / 16 × 340
+            Latitude  range: 5°S  – 27°S  →  y = (lat − 5)  / 22 × 420
+            Key reference points:
+              Mutare: 32.66°E, 18.97°S  →  x=270, y=265
+              Harare: 31.05°E, 17.82°S  →  x=236, y=243
+          -->
+          <svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <defs>
-              <filter id="map-shadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+              <linearGradient id="oceanGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a3a5c"/>
+                <stop offset="100%" stop-color="#0f2540"/>
+              </linearGradient>
+              <filter id="country-glow">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
 
-            <!-- Ocean background -->
-            <rect width="400" height="420" fill="#ddeeff" rx="8"/>
+            <!-- Ocean -->
+            <rect width="340" height="420" fill="url(#oceanGrad)" rx="10"/>
+            <!-- Subtle grid lines (lat/lon) -->
+            <line x1="0" y1="105" x2="340" y2="105" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="0" y1="210" x2="340" y2="210" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="0" y1="315" x2="340" y2="315" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="85" y1="0" x2="85" y2="420" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="170" y1="0" x2="170" y2="420" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="255" y1="0" x2="255" y2="420" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
 
-            <!-- Tanzania -->
-            <path fill="#c8d8c8" stroke="#fff" stroke-width="1.2" d="
-              M200,0 L280,0 L290,20 L295,50 L290,80 L285,110 L280,130 L260,140
-              L240,150 L220,155 L200,150 L185,140 L175,120 L170,95 L172,65 L180,35 Z"/>
+            <!-- Zambia: spans roughly 22°E–33°E, 8°S–18°S -->
+            <path fill="#2d5a3d" stroke="#1a3a2a" stroke-width="0.8" d="
+              M42,57 L85,48 L127,44 L152,40 L178,38
+              L195,52 L200,70 L205,95 L208,120
+              L210,145 L208,165 L205,178
+              L190,180 L175,185 L160,182
+              L145,185 L130,182 L115,178
+              L100,182 L85,178 L70,182
+              L55,175 L42,168 L38,150
+              L36,130 L38,108 L40,85 Z"/>
 
-            <!-- Malawi (thin sliver on east side) -->
-            <path fill="#b8ccb8" stroke="#fff" stroke-width="1" d="
-              M280,130 L290,115 L295,130 L290,160 L285,185 L278,200 L270,195
-              L268,175 L272,155 L278,140 Z"/>
+            <!-- Tanzania: spans roughly 29°E–36°E, 1°S–11°S (partial) -->
+            <path fill="#2d5a3d" stroke="#1a3a2a" stroke-width="0.8" d="
+              M195,0 L270,0 L295,0 L320,10
+              L335,28 L338,50 L335,80
+              L330,110 L325,132 L315,148
+              L300,155 L285,158 L272,155
+              L258,150 L248,145 L238,142
+              L225,140 L215,142 L210,145
+              L208,120 L205,95 L200,70
+              L195,52 L192,35 L193,18 Z"/>
 
-            <!-- Zambia -->
-            <path fill="#c8d8c8" stroke="#fff" stroke-width="1.2" d="
-              M40,42 L130,30 L180,35 L200,50 L200,150 L185,140 L160,145
-              L145,155 L130,150 L120,155 L100,150 L80,155 L60,148 L40,140 Z"/>
+            <!-- Malawi: lon 33–35, lat 9–17 -->
+            <path fill="#3d7a50" stroke="#1a3a2a" stroke-width="0.7" d="
+              M280,85 L298,80 L308,95 L312,115
+              L310,135 L305,152 L298,162
+              L290,168 L282,162 L278,148
+              L275,130 L274,112 L276,95 Z"/>
 
-            <!-- Mozambique (east of Zimbabwe) -->
-            <path fill="#b8ccb8" stroke="#fff" stroke-width="1" d="
-              M260,140 L280,130 L278,140 L272,155 L268,175 L270,195 L265,220
-              L260,245 L255,265 L250,285 L245,305 L250,330 L245,360 L235,380
-              L225,395 L215,410 L200,420 L220,420 L240,410 L260,390 L275,365
-              L280,340 L282,310 L280,280 L278,255 L275,235 L272,210 L268,190
-              L268,170 L272,155 Z"/>
+            <!-- Mozambique: lon 32–36, lat 10–26 -->
+            <path fill="#2d5a3d" stroke="#1a3a2a" stroke-width="0.8" d="
+              M258,150 L272,155 L285,158 L300,155
+              L315,148 L325,132 L330,110
+              L335,80 L338,50 L340,80
+              L340,120 L338,155 L335,182
+              L330,210 L325,238 L322,265
+              L318,295 L315,320 L310,345
+              L305,370 L298,395 L290,420
+              L275,420 L265,410 L260,390
+              L255,368 L252,345 L250,320
+              L248,295 L245,268 L244,248
+              L242,228 L240,210 L250,200
+              L258,185 L262,170 Z"/>
 
-            <!-- Zimbabwe — HIGHLIGHTED -->
-            <path class="africa-zimbabwe" stroke="#fff" stroke-width="1.5" d="
-              M120,155 L130,150 L145,155 L160,145 L185,140 L200,150 L220,155
-              L240,150 L260,140 L268,155 L268,175 L265,200 L260,225 L255,245
-              L240,250 L220,255 L200,255 L180,252 L160,248 L140,242 L120,235
-              L108,220 L105,200 L108,180 L115,165 Z"/>
+            <!-- Botswana: lon 20–29, lat 18–26 -->
+            <path fill="#2d5a3d" stroke="#1a3a2a" stroke-width="0.8" d="
+              M42,168 L55,175 L70,182 L85,178
+              L100,182 L108,192 L110,215
+              L108,238 L105,260 L102,278
+              L95,295 L85,308 L72,315
+              L58,312 L45,305 L32,295
+              L22,280 L18,262 L20,242
+              L22,220 L26,200 L32,182 Z"/>
 
-            <!-- Botswana (south-west of Zimbabwe) -->
-            <path fill="#c8d8c8" stroke="#fff" stroke-width="1.2" d="
-              M40,140 L60,148 L80,155 L100,150 L108,165 L105,200 L108,220
-              L120,235 L110,250 L100,265 L85,270 L65,268 L45,260 L28,248
-              L20,230 L18,210 L22,190 L30,170 L38,155 Z"/>
+            <!-- South Africa: lon 17–33, lat 22–34 (top portion only) -->
+            <path fill="#2d5a3d" stroke="#1a3a2a" stroke-width="0.8" d="
+              M22,280 L32,295 L45,305 L58,312
+              L72,315 L85,308 L95,295 L102,278
+              L105,260 L108,238 L110,215
+              L108,192 L115,190 L128,195
+              L140,200 L152,202 L165,200
+              L178,202 L188,208 L195,218
+              L200,235 L205,255 L210,275
+              L215,295 L218,318 L215,342
+              L208,362 L198,382 L185,398
+              L170,410 L155,418 L138,420
+              L120,420 L100,415 L82,405
+              L65,392 L50,378 L38,362
+              L28,345 L20,325 L16,305 L18,285 Z"/>
 
-            <!-- Namibia (west) -->
-            <path fill="#c8d8c8" stroke="#fff" stroke-width="1.2" d="
-              M0,80 L18,80 L20,100 L22,130 L20,160 L18,190 L20,210
-              L18,230 L20,248 L10,260 L0,265 Z"/>
+            <!-- Zimbabwe — HIGHLIGHTED, orange -->
+            <path fill="#f97316" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"
+                  filter="url(#country-glow)" d="
+              M115,178 L130,182 L145,185 L160,182
+              L175,185 L190,180 L205,178
+              L215,178 L225,180 L238,182
+              L242,192 L242,210 L242,228
+              L244,248 L245,268 L244,280
+              L238,285 L228,288 L218,290
+              L205,292 L192,290 L180,288
+              L168,285 L155,280 L142,275
+              L130,268 L120,258 L112,245
+              L108,230 L108,215 L108,200
+              L110,188 Z"/>
 
-            <!-- South Africa (south) -->
-            <path fill="#c8d8c8" stroke="#fff" stroke-width="1.2" d="
-              M20,248 L28,248 L45,260 L65,268 L85,270 L100,265 L110,250
-              L120,235 L140,242 L160,248 L180,252 L200,255 L220,255 L240,250
-              L255,245 L260,265 L255,285 L250,305 L245,330 L250,360 L240,380
-              L225,395 L210,410 L195,420 L170,420 L145,415 L120,405 L95,390
-              L75,375 L58,358 L45,338 L35,315 L28,290 L22,268 Z"/>
-
-            <!-- Country borders & labels -->
-            <text x="230" y="70" text-anchor="middle" font-size="9" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">TANZANIA</text>
-            <text x="95" y="90" text-anchor="middle" font-size="9" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">ZAMBIA</text>
-            <text x="285" y="165" text-anchor="middle" font-size="7.5" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">MALAWI</text>
-            <text x="272" y="240" text-anchor="middle" font-size="7.5" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">MOZAM-</text>
-            <text x="272" y="250" text-anchor="middle" font-size="7.5" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">BIQUE</text>
-            <text x="68" y="215" text-anchor="middle" font-size="9" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">BOTSWANA</text>
-            <text x="8" y="180" text-anchor="middle" font-size="7.5" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600" transform="rotate(-90,8,180)">NAMIBIA</text>
-            <text x="150" y="345" text-anchor="middle" font-size="9" fill="#5a7a5a" font-family="Inter,sans-serif" font-weight="600">SOUTH AFRICA</text>
+            <!-- Border line Zimbabwe/Mozambique (Mutare side) -->
+            <path fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" stroke-dasharray="3,2" d="
+              M244,248 L245,268 L244,280"/>
 
             <!-- Zimbabwe label -->
-            <text x="188" y="205" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Inter,sans-serif" opacity="0.95">ZIMBABWE</text>
+            <text x="178" y="238" text-anchor="middle" font-size="9.5" font-weight="800"
+                  fill="white" font-family="Inter,sans-serif" letter-spacing="0.08em"
+                  style="text-shadow:0 1px 3px rgba(0,0,0,0.5)">ZIMBABWE</text>
 
-            <!-- Mutare marker (lon32.66,lat-18.97) on Zimbabwe/Mozambique border → approx x=253,y=196 -->
-            <circle class="africa-mutare-pulse" cx="255" cy="196" r="6" fill="#f97316" opacity="0.55"/>
-            <circle cx="255" cy="196" r="6" fill="#fff" stroke="#f97316" stroke-width="2.5"/>
+            <!-- Surrounding country labels -->
+            <text x="130" y="110" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.05em">ZAMBIA</text>
+            <text x="258" y="68" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.05em">TANZANIA</text>
+            <text x="297" y="128" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.04em">MALAWI</text>
+            <text x="305" y="248" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.04em">MOZAM-</text>
+            <text x="305" y="260" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.04em">BIQUE</text>
+            <text x="70" y="260" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.04em">BOTSWANA</text>
+            <text x="128" y="370" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.04em">SOUTH AFRICA</text>
 
-            <!-- Mutare label -->
-            <text x="242" y="188" text-anchor="middle" font-size="8" font-weight="700" fill="#1e293b" font-family="Inter,sans-serif">Mutare</text>
+            <!-- Harare dot -->
+            <circle cx="236" cy="243" r="3" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+            <text x="224" y="240" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif">Harare</text>
+
+            <!-- Mutare marker — on Zimbabwe/Mozambique border -->
+            <circle class="africa-mutare-pulse" cx="270" cy="265" r="5" fill="#f97316" opacity="0.6"/>
+            <circle cx="270" cy="265" r="5.5" fill="none" stroke="#f97316" stroke-width="1" opacity="0.4"/>
+            <circle cx="270" cy="265" r="4" fill="white" stroke="#f97316" stroke-width="2"/>
+
+            <!-- Mutare label — positioned left to avoid overlap with border -->
+            <text x="264" y="256" text-anchor="end" font-size="7.5" font-weight="700"
+                  fill="white" font-family="Inter,sans-serif">Mutare</text>
           </svg>
         </div>
       </div>
