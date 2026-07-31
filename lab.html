@@ -184,6 +184,36 @@
       object-fit: cover;
       display: block;
     }
+    /* Click-to-play button over hero video */
+    .lab-hero-video { cursor: pointer; background: #000; }
+    .lab-hero-play {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15,45,26,0.30);
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+    }
+    .lab-hero-play-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      color: var(--green-900, #0f2d1a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .lab-hero-play-circle svg { width: 30px; height: 30px; margin-left: 4px; }
+    .lab-hero-play:hover { background: rgba(15,45,26,0.20); }
+    .lab-hero-play:hover .lab-hero-play-circle { transform: scale(1.08); background: #fff; }
+    .lab-hero-play.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .lab-hero-badge-zw { display: none; }
 
     /* Breadcrumb */
@@ -706,10 +736,15 @@
         </div>
       </div>
       <div class="lab-hero-img" data-animate="fade-up" data-delay="200">
-        <video autoplay muted loop playsinline poster="assets/images/Computer Lab/lab-hero.webp" aria-label="Video: inside the Bongai Shamwari computer lab in Mutare, Zimbabwe">
+        <video class="lab-hero-video" controls playsinline preload="none" poster="assets/images/Computer Lab/lab-hero.webp" aria-label="Video: inside the Bongai Shamwari computer lab in Mutare, Zimbabwe">
           <source src="assets/images/Computer Lab/lab-hero.mp4" type="video/mp4">
           <img src="assets/images/Computer Lab/lab-hero.webp" alt="First ICT lesson at Bongai Shamwari School">
         </video>
+        <button class="lab-hero-play" type="button" aria-label="Play video with sound">
+          <span class="lab-hero-play-circle">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="8,5 19,12 8,19" fill="currentColor"/></svg>
+          </span>
+        </button>
       </div>
     </div>
   </section>
@@ -1042,6 +1077,23 @@
         localStorage.setItem(GDPR_KEY, 'declined');
         hideBanner();
       });
+    })();
+  </script>
+  <script>
+    /* ── Hero video: click-to-play with sound ── */
+    (function () {
+      var wrap = document.querySelector('.lab-hero-img');
+      if (!wrap) return;
+      var v = wrap.querySelector('video');
+      var btn = wrap.querySelector('.lab-hero-play');
+      if (!v || !btn) return;
+      btn.addEventListener('click', function () {
+        v.muted = false;
+        var pr = v.play();
+        if (pr && pr.catch) pr.catch(function () {});
+      });
+      v.addEventListener('play', function () { btn.classList.add('is-hidden'); });
+      v.addEventListener('ended', function () { btn.classList.remove('is-hidden'); });
     })();
   </script>
 </body>
