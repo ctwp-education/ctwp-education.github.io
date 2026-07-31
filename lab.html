@@ -184,35 +184,23 @@
       object-fit: cover;
       display: block;
     }
-    /* Click-to-play button over hero video */
+    /* Click-to-play button over hero video — reuses the site's .yt-play button */
     .lab-hero-video { cursor: pointer; background: #000; }
     .lab-hero-play {
       position: absolute;
       inset: 0;
       z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15,45,26,0.30);
       border: none;
       cursor: pointer;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.35) 100%);
       transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
     }
-    .lab-hero-play-circle {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.95);
-      color: var(--green-900, #0f2d1a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
-      transition: transform 0.2s ease, background 0.2s ease;
+    .lab-hero-play:hover { background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%); }
+    .lab-hero-play:hover .yt-play {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: rgba(255,255,255,0.28);
+      border-color: rgba(255,255,255,0.8);
     }
-    .lab-hero-play-circle svg { width: 30px; height: 30px; margin-left: 4px; }
-    .lab-hero-play:hover { background: rgba(15,45,26,0.20); }
-    .lab-hero-play:hover .lab-hero-play-circle { transform: scale(1.08); background: #fff; }
     .lab-hero-play.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .lab-hero-badge-zw { display: none; }
 
@@ -741,9 +729,7 @@
           <img src="assets/images/Computer Lab/lab-hero.webp" alt="First ICT lesson at Bongai Shamwari School">
         </video>
         <button class="lab-hero-play" type="button" aria-label="Play video with sound">
-          <span class="lab-hero-play-circle">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="8,5 19,12 8,19" fill="currentColor"/></svg>
-          </span>
+          <span class="yt-play"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="6,3 20,12 6,21" fill="white"/></svg></span>
         </button>
       </div>
     </div>
