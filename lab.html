@@ -175,7 +175,8 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.45);
       border: 1px solid rgba(255,255,255,0.08);
     }
-    .lab-hero-img img {
+    .lab-hero-img img,
+    .lab-hero-img video {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -705,7 +706,10 @@
         </div>
       </div>
       <div class="lab-hero-img" data-animate="fade-up" data-delay="200">
-        <img src="assets/images/Computer Lab/lab-hero.webp" alt="First ICT lesson at Bongai Shamwari School" fetchpriority="high">
+        <video autoplay muted loop playsinline poster="assets/images/Computer Lab/lab-hero.webp" aria-label="Video: inside the Bongai Shamwari computer lab in Mutare, Zimbabwe">
+          <source src="assets/images/Computer Lab/lab-hero.mp4" type="video/mp4">
+          <img src="assets/images/Computer Lab/lab-hero.webp" alt="First ICT lesson at Bongai Shamwari School">
+        </video>
       </div>
     </div>
   </section>
